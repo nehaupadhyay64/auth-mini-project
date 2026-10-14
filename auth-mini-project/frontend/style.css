@@ -1,0 +1,316 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #06b6d4;
+  --text: #1e293b;
+  --muted: #64748b;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--text);
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #312e81 50%,
+    #164e63 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 12s ease infinite;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== Animated Background ===== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 9s ease-in-out infinite alternate;
+}
+
+body::before {
+  background: #818cf8;
+  top: -100px;
+  left: -80px;
+}
+
+body::after {
+  background: #22d3ee;
+  bottom: -120px;
+  right: -70px;
+  animation-delay: 2s;
+}
+
+/* ===== Main Card: Bigger & Professional ===== */
+body > div {
+  width: 100% !important;
+  max-width: 560px !important;
+  padding: 55px 50px !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25),
+    0 0 35px rgba(129, 140, 248, 0.12);
+  animation: cardAppear 0.8s cubic-bezier(.2, .8, .2, 1) both;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+body > div:hover {
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(129, 140, 248, 0.2);
+}
+
+/* ===== Headings ===== */
+h2 {
+  color: #1e1b4b;
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px;
+  margin-bottom: 14px !important;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin: 14px auto 28px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+}
+
+/* ===== Forms ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  min-height: 56px;
+  padding: 18px 18px !important;
+  margin-bottom: 0 !important;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 15px;
+  border: 1px solid #dbe2ef !important;
+  border-radius: 13px !important;
+  background: #f8fafc;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  border-color: #818cf8 !important;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.13);
+  transform: translateY(-1px);
+}
+
+/* ===== Buttons ===== */
+button {
+  width: 100%;
+  min-height: 54px;
+  padding: 17px 18px !important;
+  margin-top: 2px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border: none;
+  border-radius: 13px !important;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35);
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* ===== Login Button ===== */
+#loginForm button {
+  background: linear-gradient(135deg, #06b6d4, #0891b2);
+  box-shadow: 0 8px 20px rgba(8, 145, 178, 0.22);
+}
+
+/* ===== Logout Button ===== */
+#logoutBtn {
+  width: auto;
+  min-width: 150px;
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.2);
+  margin-top: 0;
+}
+
+/* ===== Links & Text ===== */
+p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+p a {
+  color: #4f46e5 !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+p a:hover {
+  color: #0891b2 !important;
+  text-decoration: underline;
+}
+
+/* ===== Status Messages ===== */
+#message {
+  min-height: 0;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+#message:empty {
+  display: none;
+}
+
+#message:not(:empty) {
+  padding: 12px;
+  border-radius: 10px;
+  background: #eef2ff;
+}
+
+/* ===== Dashboard ===== */
+#welcomeMessage {
+  margin: 16px 0 28px;
+  color: #475569;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+/* ===== Animations ===== */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(35px, 25px) scale(1.15);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  body > div {
+    max-width: 100% !important;
+    padding: 36px 24px !important;
+    border-radius: 22px;
+  }
+
+  h2 {
+    font-size: 29px !important;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    min-height: 52px;
+    padding: 15px !important;
+  }
+
+  button {
+    min-height: 50px;
+    padding: 15px !important;
+  }
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
