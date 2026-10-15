@@ -18,11 +18,11 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch((err)=> console.log("MongoDB connection failed",err));
 
 app.get("/",(req,res)=>{
-    console.log("Auth Mini Project backend is running")
+    res.send("Auth Mini Project backend is running")
 });
 app.use("/api/auth", authRoutes);
 
-app.listen(PORT,()=>{
+app.listen(PORT,"0.0.0.0",()=>{
     console.log(`Server is running ${PORT}`);
 });
 
