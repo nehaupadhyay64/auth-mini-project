@@ -1,5 +1,5 @@
 
-const BASE_URL ="https://auth-mini-project.onrender.com";
+const BASE_URL = "https://auth-mini-project-1.onrender.com";
 
 // ---------- REGISTER LOGIC ----------
 const registerForm = document.getElementById("registerForm");
